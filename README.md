@@ -12,6 +12,8 @@ The find-in-page bar of [Zen Browser](https://zen-browser.app) (the search you o
 - Floats top-right instead of sitting at the bottom
 - One clean row: `[ search   2 of 5 ] ⌃ ⌄ ✕`
 - Arc-like highlights: all matches yellow, current match orange
+- Visible keyboard focus on the bar and its buttons
+- Match count that also fits localized labels ("Occurrence 12 sur 345")
 - Works in light and dark mode
 
 ## Installation
@@ -89,12 +91,15 @@ If you used the script, these live in `user.js` in your profile folder and are a
 
 Edit the variables at the top of `chrome.css` (`--arc-findbar-width`, `--arc-findbar-offset-top`, `--arc-findbar-bg`, …) in the downloaded folder and install again.
 
+- `--arc-findbar-blur`: set to e.g. `12px` to blur the page behind the bar. Only visible if `--arc-findbar-bg` is semi-transparent.
+- `--arc-findbar-focus-ring`: set to `0 0 0 0 transparent` to turn the focus ring off.
+
 ## Known limitations
 
 - Made for Zen 1.24 on macOS. Not tested on Windows, Linux or in split view yet.
 - Zen updates can change the find bar and break the layout.
 - The install script uses Zen's internal mod format, which isn't officially documented. A future Zen version could change it.
-- The match count hides the word after the numbers. In some languages a short word like "match" may still show.
+- The match count is cut off with an ellipsis when the bar is very narrow or the label is long. The numbers stay visible.
 - Match case, whole words and diacritics are hidden. Their last setting still applies.
 
 ## Uninstall
@@ -104,6 +109,10 @@ Edit the variables at the top of `chrome.css` (`--arc-findbar-width`, `--arc-fin
 **Installed manually:** open your profile folder (`about:support` → **Profile Folder**), delete `chrome/arc-findbar.css` and the `@import` line in `chrome/userChrome.css` (or the whole file, if you copied it from the download and added nothing), then restart Zen. If you don't use any other custom styles, also reset `toolkit.legacyUserProfileCustomizations.stylesheets` in `about:config`.
 
 **Highlight colors:** if you used the script, also remove this mod's lines from `user.js` in your profile folder. Then reset the preferences from the table above in `about:config`.
+
+## Credits
+
+Focus states, the localized match-count fix and the optional backdrop blur were adapted from [Rou-dou-dou's fork](https://github.com/Rou-dou-dou/zen-arc-findbar-alt).
 
 ## License
 
