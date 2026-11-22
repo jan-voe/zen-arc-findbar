@@ -112,7 +112,10 @@ Edit the variables at the top of `chrome.css` (`--arc-findbar-width`, `--arc-fin
 
 ## Credits
 
-Focus states and the optional backdrop blur were adapted from [Rou-dou-dou's fork](https://github.com/Rou-dou-dou/zen-arc-findbar-alt).
+Focus states and the optional backdrop blur were adapted from
+[Rou-dou-dou's fork](https://github.com/Rou-dou-dou/zen-arc-findbar-alt).
+The locale-aware match count was inspired by the French fix in that fork;
+the implementation here is different.
 
 ## License
 
