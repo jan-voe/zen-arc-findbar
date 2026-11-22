@@ -37,7 +37,7 @@ The find bar now shows up in Zen's settings under **Zen Mods**, like any other m
 
 It only touches your Zen profile folder, downloads nothing and needs no admin rights. Step by step:
 
-1. Stops if Zen is still running.
+1. Exits with a message if Zen is still running, so you can quit it with `Cmd + Q` first.
 2. Finds the profile Zen uses (from `profiles.ini`).
 3. Adds an entry for this mod to `zen-themes.json`. Your other mods stay as they are.
 4. Copies `chrome.css` and `README.md` to `chrome/zen-themes/<mod id>/`.
