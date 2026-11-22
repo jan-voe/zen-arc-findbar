@@ -13,6 +13,7 @@ The find-in-page bar of [Zen Browser](https://zen-browser.app) (the search you o
 - One clean row: `[ search   2 of 5 ] ⌃ ⌄ ✕`
 - Arc-like highlights: all matches yellow, current match orange
 - Subtle focus state on the bar and its buttons
+- Full match count for locales that put the word before the numbers
 - Works in light and dark mode
 
 ## 🛠️ Installation
