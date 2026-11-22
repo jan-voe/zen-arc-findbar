@@ -176,6 +176,26 @@ findbar .found-matches {
   font-variant-numeric: tabular-nums !important;
 }
 
+/* Locales that put the word before the numbers (fr, it, pt, ca) or split
+ * the numbers around it (zh, ja, tr, sv) need the full label; the 13ch trick
+ * would cut off the count. The field gives up the space instead. */
+:root:is(
+  :lang(fr), :lang(it), :lang(pt), :lang(ca),
+  :lang(zh), :lang(ja), :lang(tr), :lang(sv)
+) findbar .found-matches {
+  width: auto !important;
+  max-width: 60% !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+
+:root:is(
+  :lang(fr), :lang(it), :lang(pt), :lang(ca),
+  :lang(zh), :lang(ja), :lang(tr), :lang(sv)
+) findbar .findbar-textbox {
+  flex: 1 1 0 !important;
+}
+
 findbar .found-matches[hidden] {
   display: none !important;
 }
