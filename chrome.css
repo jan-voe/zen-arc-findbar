@@ -16,7 +16,7 @@
   --arc-findbar-border: light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.1));
   --arc-findbar-hover: light-dark(rgba(0, 0, 0, 0.06), rgba(255, 255, 255, 0.1));
   --arc-findbar-focus-border: light-dark(rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0.22));
-  --arc-findbar-focus-ring: 0 0 0 2px light-dark(rgba(0, 122, 255, 0.35), rgba(10, 132, 255, 0.45));
+  --arc-findbar-focus-ring: 0 0 0 0 transparent; /* off by default; set to e.g. 0 0 0 2px rgba(0, 122, 255, 0.35) to show a ring */
   --arc-findbar-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.12);
   --arc-findbar-shadow-focus: 0 10px 28px rgba(0, 0, 0, 0.22), 0 2px 4px rgba(0, 0, 0, 0.14);
   --arc-findbar-notfound: #e5484d;
@@ -66,7 +66,7 @@
     visibility 0s !important;
 }
 
-/* Focus: a thin neutral border plus a soft ring, visible without being loud */
+/* Focus: a thin neutral border and a slightly stronger shadow; the ring stays optional */
 .browserContainer > findbar:focus-within {
   border-color: var(--arc-findbar-focus-border) !important;
   box-shadow: var(--arc-findbar-shadow-focus), var(--arc-findbar-focus-ring) !important;
@@ -129,7 +129,7 @@ findbar .find-status-icon {
 
 /* ---------- Search field (borderless, the box itself is the "field") ---------- */
 findbar .findbar-textbox {
-  flex: 1 1 0 !important;
+  flex: 1 1 auto !important;
   width: auto !important;
   min-width: 60px !important;
   min-height: 26px !important;
@@ -156,19 +156,21 @@ findbar .findbar-textbox[flash="true"] {
 
 /* ---------- Match count inside the field ---------- */
 /* The label reads "1 of 3 matches" (localized) and CSS can't change the text.
- * Keep it on one line and let the search field shrink instead. The ellipsis is
- * only a last resort; this also works for locales that put the word before the
- * numbers ("Occurrence 12 sur 345"). */
+ * Trick: the label is so narrow that the trailing word wraps to a second line,
+ * and only the first line ("1 of 3") stays visible, right-aligned next to the arrows.
+ * 13ch fits "1000 of 1000". */
 findbar .found-matches {
   display: block !important;
   flex: 0 0 auto !important;
-  max-width: 60% !important;
+  width: 13ch !important;
   height: 16px !important;
   line-height: 16px !important;
   margin: 0 6px 0 0 !important;
   overflow: hidden !important;
-  white-space: nowrap !important;
-  text-overflow: ellipsis !important;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
   text-align: end !important;
   color: var(--arc-findbar-muted) !important;
   font-size: 12px !important;
