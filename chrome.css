@@ -219,6 +219,12 @@ findbar .findbar-find-next[disabled] > .toolbarbutton-icon {
   opacity: 0.35 !important;
 }
 
+/* Firefox keeps the arrows enabled when the current term has no matches; grey them out anyway */
+findbar .findbar-textbox[status="notfound"] ~ .findbar-find-previous > .toolbarbutton-icon,
+findbar .findbar-textbox[status="notfound"] ~ .findbar-find-next > .toolbarbutton-icon {
+  opacity: 0.35 !important;
+}
+
 findbar .findbar-find-previous > .toolbarbutton-icon,
 findbar .findbar-find-next > .toolbarbutton-icon,
 findbar .findbar-closebutton > .toolbarbutton-icon {
