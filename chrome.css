@@ -144,8 +144,7 @@ findbar .findbar-textbox {
   font-size: 13px !important;
 }
 
-findbar .findbar-textbox[status="notfound"],
-findbar .findbar-textbox[status="notfound"] + .found-matches {
+findbar .findbar-textbox[status="notfound"] {
   background: transparent !important;
   color: var(--arc-findbar-notfound) !important;
 }

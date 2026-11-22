@@ -111,7 +111,7 @@ Edit the variables at the top of `chrome.css` (`--arc-findbar-width`, `--arc-fin
 
 ## Credits
 
-Focus states, the optional backdrop blur and the red match count on not-found were adapted from [Rou-dou-dou's fork](https://github.com/Rou-dou-dou/zen-arc-findbar-alt).
+Focus states and the optional backdrop blur were adapted from [Rou-dou-dou's fork](https://github.com/Rou-dou-dou/zen-arc-findbar-alt).
 
 ## License
 
