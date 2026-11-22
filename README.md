@@ -95,7 +95,7 @@ Edit the variables at the top of `chrome.css` (`--arc-findbar-width`, `--arc-fin
 
 ## Known limitations
 
-- Made for Zen 1.24 on macOS. Not tested on Windows, Linux or in split view yet.
+- Tested on Zen 1.24.3b (aarch64), Firefox 160.0.1, macOS (Darwin 27.2.0), including split view. Not tested on Windows or Linux yet.
 - Zen updates can change the find bar and break the layout.
 - The install script uses Zen's internal mod format, which isn't officially documented. A future Zen version could change it.
 - The match count hides the word after the numbers. In some languages a short word like "match" may still show.
